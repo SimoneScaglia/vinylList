@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vinyl_list/utils/app_colors.dart';
 import 'package:vinyl_list/utils/db_connection.dart';
-import 'package:vinyl_list/view/page/dashboard_page.dart';
+import 'package:vinyl_list/view/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,9 +47,13 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'VinylList',
-      home: DashboardPage(),
+      theme: ThemeData(
+        primaryColor: AppColors.primaryColor,
+        scaffoldBackgroundColor: AppColors.backgroundColor,
+      ),
+      home: const MainScreen(),
     );
   }
 }
